@@ -1,3 +1,46 @@
+# Instrucciones para el Fabu
+
+```bash
+git clone https://github.com/alorozco53/practical_seq2seq.git
+cd practical_seq2seq/ckpt/twitter/
+```
+
+El siguiente comando tarda alrededor de 3 a 5 minutos (descarga un archivo de ~790 MB, el dataset en
+formato ckpt).
+```bash
+./pull
+```
+
+Después, descargamos metadatos.
+```bash
+cd ../../datasets/twitter/
+./pull
+```
+
+Nos colocamos en la carpeta raíz y abrimos jupyter.
+```bash
+cd ../../
+jupyter notebook
+```
+
+En el IDE del navegador, abrimos el archivo `03-Twitter-chatbot.ipynb`. Es necesario que se esté ejecutando en un kernel
+de Python 3 y que se tenga tensorflow 1.0.0. Para verificar la versión de tensorflow, ejecutamos lo siguiente en la terminal:
+```bash
+python3 -c "import tensorflow as tf; print(tf.__version__)"
+```
+
+Finalmente, se ejecuta cada celda en orden hasta llegar a la función `model.train(...)`, que inicia el entrenamiento.
+
+Alternativamente, se puede ejecutar directamente el archivo `03-Twitter-chatbot.py`, pero conviene más ir poco a poco
+por si hay algún error.
+```bash
+python3 03-Twitter-chatbot.py
+```
+
+
+
+----
+
 # Seq2Seq Wrapper for Tensorflow
 
 ![](https://img.shields.io/badge/python-3-brightgreen.svg) ![](https://img.shields.io/badge/tensorflow-0.12.0-yellowgreen.svg)
